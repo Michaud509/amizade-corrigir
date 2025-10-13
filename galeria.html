@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - AMIZADE PERFUME</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Galeria.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <script src="dark-mode.js"></script>
+    <header>
+        <div class="caixa">
+            <img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]" height="100">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="titulo-principal-produtos">Nossa Galeria</h2>
+        
+        <!-- Filtros da Galeria -->
+        <div class="filtros-galeria">
+            <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+            <button class="filtro-btn" data-filtro="categoria1">Perfume Arabia</button>
+            <button class="filtro-btn" data-filtro="categoria2">Perfume Frances</button>
+            <button class="filtro-btn" data-filtro="categoria3">Perfume Americano</button>
+        </div>
+
+        <!-- Grid de Imagens -->
+        <div class="galeria-grid">
+            <!-- Item 1 -->
+            <div class="galeria-item" data-categoria="categoria1">
+                <img src="assets/arab1.jpg" alt="[DESCRIÇÃO IMAGEM 1]">
+                <div class="galeria-overlay">
+                    <h3>Arabe Lattafa Badee Al Oud</h3>
+                    <p>Perfume Arabe Lattafa Badee Al Oud Oud Oud For Glory EDP 100ml Unissex</p>
+                    <button class="btn-ver-mais">Ver Detalhes</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="galeria-item" data-categoria="categoria2">
+                <img src="assets/arab 2.webp" alt="[DESCRIÇÃO IMAGEM 2]">
+                <div class="galeria-overlay">
+                    <h3>Perfume Árabe Rouge Âmbar</h3>
+                    <p>Perfume Árabe Rouge Âmbar Arabic Collection A026 - 25ml</p>
+                    <button class="btn-ver-mais">Ver Detalhes</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="galeria-item galeria-item-grande" data-categoria="categoria1">
+                <img src="assets/arab3.jpg" alt="[DESCRIÇÃO IMAGEM 3]">
+                <div class="galeria-overlay">
+                    <h3> Lattafa Khamrah</h3>
+                    <p>Perfume Árabe Lattafa Khamrah - Eau de Parfum - Unisex - 100ml</p>
+                    <button class="btn-ver-mais">Ver Detalhes</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="galeria-item" data-categoria="categoria3">
+                <img src="assets/americain.jpg" alt="[DESCRIÇÃO IMAGEM 4]">
+                <div class="galeria-overlay">
+                    <h3>212 Men</h3>
+                    <p>212 Men Nyc Carolina Herrera - Perfume Masculino - Eau de Toilette, Carolina Herrera</p>
+                    <button class="btn-ver-mais">Ver Detalhes</button>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="galeria-item" data-categoria="categoria2">
+                <img src="assets/francais.jpg" alt="[DESCRIÇÃO IMAGEM 5]">
+                <div class="galeria-overlay">
+                    <h3>FRENCH LOVER</h3>
+                    <p>Eau de Parfum Notes aromatiques épicées</p>
+                    <button class="btn-ver-mais">Ver Detalhes</button>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="galeria-item" data-categoria="categoria3">
+                <img src="assets/americain 2.jpg" alt="[DESCRIÇÃO IMAGEM 6]">
+                <div class="galeria-overlay">
+                    <h3>212 Vip Men Eau de Toilette</h3>
+                    <p>212 Vip Men Eau de Toilette 100ml Masculino</p>
+                    <button class="btn-ver-mais">Ver Detalhes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal/Lightbox -->
+        <div class="modal-galeria" id="modalGaleria">
+            <span class="fechar-modal">&times;</span>
+            <img class="modal-conteudo" id="modalImagem">
+            <div class="modal-caption" id="modalCaption"></div>
+            <div class="modal-navegacao">
+                <button class="nav-btn prev">❮ Anterior</button>
+                <button class="nav-btn next">Próximo ❯</button>
+            </div>
+        </div>
+
+        <!-- Seção de Estatísticas -->
+        <section class="estatisticas">
+            <h3>Nossos Números</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-numero" data-target="150">0</span>
+                    <span class="stat-label">Projetos Realizados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-numero" data-target="98">0</span>
+                    <span class="stat-label">Clientes Satisfeitos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-numero" data-target="5">0</span>
+                    <span class="stat-label">Anos de Experiência</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-numero" data-target="24">0</span>
+                    <span class="stat-label">Prêmios Recebidos</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="assets/logo A.jpg" alt="Logo [SEU NEGÓCIO]" style="width: 200px;">
+        <p class="copyright">&copy; Copyright AMIZADE PERFUME- 2025</p>
+    </footer>
+
+    <!-- JavaScript da Galeria -->
+    <script>
+        // Filtro da Galeria
+        const filtros = document.querySelectorAll('.filtro-btn');
+        const itens = document.querySelectorAll('.galeria-item');
+
+        filtros.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove classe ativo de todos
+                filtros.forEach(f => f.classList.remove('ativo'));
+                // Adiciona classe ativo no clicado
+                this.classList.add('ativo');
+                
+                const filtro = this.getAttribute('data-filtro');
+                
+                itens.forEach(item => {
+                    if(filtro === 'todos' || item.getAttribute('data-categoria') === filtro) {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeIn 0.5s';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal/Lightbox
+        const modal = document.getElementById('modalGaleria');
+        const modalImg = document.getElementById('modalImagem');
+        const modalCaption = document.getElementById('modalCaption');
+        const verMaisBtns = document.querySelectorAll('.btn-ver-mais');
+        const fecharModal = document.querySelector('.fechar-modal');
+
+        verMaisBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const item = this.closest('.galeria-item');
+                const img = item.querySelector('img');
+                const titulo = item.querySelector('h3').textContent;
+                const descricao = item.querySelector('p').textContent;
+                
+                modal.style.display = 'block';
+                modalImg.src = img.src;
+                modalCaption.innerHTML = `<h3>${titulo}</h3><p>${descricao}</p>`;
+            });
+        });
+
+        fecharModal.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        modal.onclick = function(e) {
+            if(e.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Contador animado
+        const contadores = document.querySelectorAll('.stat-numero');
+        const velocidade = 200;
+
+        function iniciarContador(contador) {
+            const alvo = +contador.getAttribute('data-target');
+            const incremento = alvo / velocidade;
+            
+            function atualizarContador() {
+                const atual = +contador.innerText;
+                
+                if(atual < alvo) {
+                    contador.innerText = Math.ceil(atual + incremento);
+                    setTimeout(atualizarContador, 1);
+                } else {
+                    contador.innerText = alvo;
+                }
+            }
+            
+            atualizarContador();
+        }
+
+        // Observador para iniciar animação quando visível
+        const observador = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const contador = entry.target;
+                    if(contador.innerText === '0') {
+                        iniciarContador(contador);
+                    }
+                }
+            });
+        });
+
+        contadores.forEach(contador => {
+            observador.observe(contador);
+        });
+
+        // Animação de fade in
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+     <!-- WIDGET DO CHATBOT - Adicionar antes do </body> em todas as páginas -->
+
+<!-- Botão Flutuante do Chat -->
+<div class="chat-widget">
+    <div class="chat-button" id="chatButton">
+        <svg class="chat-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+        </svg>
+        <svg class="close-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+        <span class="chat-badge" id="chatBadge">1</span>
+    </div>
+
+    <!-- Janela do Chat -->
+    <div class="chat-window" id="chatWindow">
+        <!-- Header do Chat -->
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <img src="assets/Gemini_Generated_Image_14dwqs14dwqs14dw.png" alt="Assistente">
+            </div>
+            <div class="chat-info">
+                <h4>AMIZADE PERFUME</h4>
+                <span class="chat-status online">Online agora</span>
+            </div>
+            <div class="chat-actions">
+                <button class="minimize-btn" id="minimizeChat">−</button>
+                <button class="close-chat-btn" id="closeChatBtn">×</button>
+            </div>
+        </div>
+
+        <!-- Área de Mensagens -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <img src="assets/LOGO A.png" alt="Bot">
+                </div>
+                <div class="message-content">
+                    <p>Olá! 👋 Sou o assistente virtual da AMIZADE PERFUME. Como posso ajudá-lo hoje?</p>
+                    <span class="message-time">Agora</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sugestões Rápidas -->
+        <div class="quick-suggestions" id="quickSuggestions">
+            <button class="suggestion-btn" data-suggestion="horarios">📅 8h-17h</button>
+            <button class="suggestion-btn" data-suggestion="servicos">💼 Impreçao,Perfume</button>
+            <button class="suggestion-btn" data-suggestion="contato">📞 34140941</button>
+            <button class="suggestion-btn" data-suggestion="localizacao">📍 Rua Selvino Casagrande </button>
+        </div>
+
+        <!-- Área de Input -->
+        <div class="chat-input-area">
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Digite sua mensagem..." maxlength="500">
+                <button class="send-btn" id="sendBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="chat-footer">
+                <span class="typing-indicator" id="typingIndicator" style="display: none;">
+                    <span></span><span></span><span></span>
+                    Digitando...
+                </span>
+                <button class="whatsapp-btn" id="whatsappBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.53 3.488"/>
+                    </svg>
+                    Continuar no WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificação de Nova Mensagem -->
+    <div class="chat-notification" id="chatNotification" style="display: none;">
+        <div class="notification-content">
+            <strong>Nova mensagem!</strong>
+            <p>O assistente respondeu sua pergunta</p>
+        </div>
+    </div>
+</div>
+
+<script src="chatbot.js"></script>
+
+</body>
+</html>

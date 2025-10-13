@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button id="loginBtn" class="login-btn">Login</button>
+    </nav>
+  </header>
+
+  <div class="background"></div>
+
+  <!-- LOGIN FORM -->
+  <div class="form-container" id="loginForm">
+    <div class="form-box">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <div class="input-box">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <div class="options">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p>Don’t have an account? <a href="#" id="toRegister">Register</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- REGISTER FORM -->
+  <div class="form-container" id="registerForm">
+    <div class="form-box">
+      <span class="close">&times;</span>
+      <h2>Registration</h2>
+      <form>
+        <div class="input-box">
+          <input type="text" required>
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <label class="terms"><input type="checkbox" required> I agree to the terms & conditions</label>
+        <button type="submit" class="btn">Register</button>
+        <p>Already have an account? <a href="#" id="toLogin">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js">
+    // Seleksyon bouton Register
+const registerButton = document.querySelector('#registerForm .btn');
+
+registerButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  // Ou ka ajoute kondisyon tcheke si tout chan yo ranpli:
+  const inputs = document.querySelectorAll('#registerForm input[required]');
+  let allFilled = true;
+
+  inputs.forEach(input => {
+    if (!input.value.trim()) allFilled = false;
+  });
+
+  if (allFilled) {
+    // Redireksyon sou 2em paj la
+    window.location.href = "welcome.html";
+  } else {
+    alert("Tanpri ranpli tout chan yo avan ou kontinye.");
+  }
+});
+
+  </script>
+</body>
+</html>

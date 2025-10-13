@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title > Contato - [ SEU N E G C I O ] </title >
+<link rel =" stylesheet " href =" reset . css ">
+<link rel =" stylesheet " href ="formulario.css">
+<link rel =" stylesheet " href ="style.css">
+<link rel =" stylesheet " href ="index.html">
+<link rel="stylesheet" href="dark-mode.css">
+<link rel="stylesheet" href="dark-mode.css">
+<link rel="stylesheet" href="produto.html">
+<link rel="stylesheet" href="produto.css">
+<link rel="stylesheet" href="chatbot.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+    <script src="dark-mode.js"></script>
+    <header >
+<div class =" caixa ">
+<h1 > <img src =" /assets/LOGO A.png " alt =" Logo [ SEU N E G C I O]" style="width: 200px;"></h1 >
+    <nav >
+            <ul >
+                    <li > <a href =" index . html "> Home </a></li >
+                    <li > <a href =" produtos . html "> Produtos </a> </li >
+                    <li > <a href =" contato . html "> Contato </a></li >
+                    </ul >
+   </nav >
+</div >
+</header >
+ <main >
+<h2 class =" titulo - principal - produtos "> Entre em Contato </h2 >
+
+<form action ="#" method =" post ">
+<fieldset >
+<legend > Dados Pessoais </legend >
+
+                        <label for =" nomesobrenome "> Nome e sobrenome * </label >
+
+                        <input type =" text " id=" nomesobrenome " name =" nome "
+                        class ="input - padrao " required
+                        placeholder =" Seu nome completo ">
+
+                        <label for =" email "> Email * </label >
+                        <input type =" email " id=" email " name =" email "
+                        class ="input - padrao " required
+                        placeholder =" seuemail@dominio . com ">
+
+                        <label for =" telefone "> Telefone * </label >
+                        <input type =" tel " id=" telefone " name =" telefone "
+
+
+                        class ="input - padrao " required
+                        placeholder ="(45) 97400 - 2054 ">
+</fieldset >
+
+<fieldset >
+<legend > Mensagem </legend >
+
+<label for =" mensagem "> Como podemos ajudar ? * </label>
+
+<textarea cols ="70" rows ="8" id=" mensagem " name ="mensagem "
+
+class ="input - padrao " required
+placeholder =" Descreva como podemos a jud-lo ... "></textarea >
+
+</fieldset >
+
+Listing 8: contato.html - Página de Contato (Parte 1)
+
+ <fieldset >
+                    <legend > Como prefere nosso contato ? </legend >
+
+                            <label class ="radio - label ">
+                    <input type =" radio " name =" contato " value =" email" id="radio - email ">
+
+                    <span class ="radio - custom "> </span >
+Email
+</label >
+<label class ="radio - label ">
+<input type =" radio " name =" contato " value ="
+
+telefone " id="radio - telefone ">
+<span class ="radio - custom "> </span >
+Telefone
+ </abel >
+
+<label class ="radio - label ">
+<input type =" radio " name =" contato " value ="
+whatsapp " id="radio - whatsapp " checked >
+<span class ="radio - custom "> </span >
+WhatsApp
+</label >
+</fieldset >
+
+<fieldset >
+<legend > Preferncia de horario </legend >
+
+<label for =" horario "> Qual horario prefere ser atendido ? </label >
+
+<select id=" horario " name =" horario " class ="input-padrao ">
+
+<option value =""> Selecione um horrio </option >
+<option value =" manha "> Manha (8h - 12 h) </option>
+
+
+
+
+<option value =" tarde "> Tarde (12 h s 18 h) </option >
+
+<option value =" noite "> Noite (18 h s 22 h) </option >
+
+<option value =" qualquer "> Qualquer horrio </option >
+</select >
+</fieldset >
+
+<label class =" checkbox - label ">
+<input type =" checkbox " name =" newsletter " value =" sim">
+
+<span class =" checkbox - custom "> </span >
+Gostaria de receber nossas novidades por email ?
+</label >
+<input type =" submit " value =" Enviar Mensagem " class ="enviar ">
+
+</form >
+
+<section class =" informacoes - contato ">
+<h3 > Outras formas de contato </h3 >
+
+<div class ="info - grid ">
+<div class ="info - item ">
+<h4 > Endereço </h4 >
+<p> Rua Selvino Casagrande , 173 <br >
+Cascavel - Alto Alegre / UF <br >
+CEP : 00000 -000 </p>
+</div >
+
+<div class ="info - item ">
+<h4 > Telefones </h4 >
+<p> Fixo : (41) 3333 -4444 <br >
+WhatsApp : (45) 97400 -2054 <br >
+Email : michaudbena8@.com </p>
+</div >
+</div >
+
+<table class =" horarios ">
+<caption > Horarios de Funcionamento </caption >
+<thead >
+<tr >
+<th > Dia da Semana </th >
+<th > Horario </th >
+</tr >
+</thead >
+<tbody >
+<tr >
+<td > Segunda a Sexta </td >
+<td >8h-18 h </td >
+</tr >
+<tr >
+<td > Sabado </td >
+<td >8h-14 h </td >
+</tr >
+<tr >
+<td > Domingo </td >
+<td > Fechado </td >
+</tr >
+</tbody >
+</table >
+</section >
+</main >
+
+<footer >
+<img src ="/assets/LOGO A.png" alt =" Logo [ SEU N E G C I O ]">
+
+<p class =" copyright ">& copy ; Copyright AMIZADE PERFUME - 2025
+
+</p>
+</footer >
+    <script src="chatbot.js"></script>
+
+</body>
+</html>

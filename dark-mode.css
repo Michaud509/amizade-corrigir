@@ -1,0 +1,135 @@
+/* === MODO ESCURO === */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header no modo escuro */
+body.dark-mode header {
+    background: #2c2c2c;
+    border-bottom-color: #444;
+}
+
+body.dark-mode .titulo-principal {
+    color: #f8a407;
+}
+
+body.dark-mode .navigation a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .navigation a::after {
+    background: #f8a407;
+}
+
+body.dark-mode .dark-mode-toggle,
+body.dark-mode .btnLogin-popup {
+    border-color: #f8a407;
+    color: #f8a407;
+}
+
+body.dark-mode .dark-mode-toggle:hover,
+body.dark-mode .btnLogin-popup:hover {
+    background: #f8a407;
+    color: #1a1a1a;
+}
+
+/* Seção Principal */
+body.dark-mode .principal {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+body.dark-mode .titulo-centralizado {
+    color: #f8a407;
+}
+
+body.dark-mode .principal p {
+    color: #e0e0e0;
+}
+
+body.dark-mode #missao {
+    background: #2c2c2c;
+    border-left-color: #f8a407;
+    color: #e0e0e0;
+}
+
+body.dark-mode #missao strong {
+    color: #f8a407;
+}
+
+/* Benefícios */
+body.dark-mode .beneficios {
+    background: #2c2c2c;
+}
+
+body.dark-mode .beneficios h3 {
+    color: #f8a407;
+}
+
+body.dark-mode .itens {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    border-left-color: #f8a407;
+}
+
+body.dark-mode .itens:hover {
+    background: #333;
+    color: #f8a407;
+}
+
+/* Modal Login/Registro */
+body.dark-mode .wrapper {
+    background: rgba(44, 44, 44, 0.95);
+    border-color: rgba(248, 164, 7, 0.5);
+}
+
+body.dark-mode .form-box h2 {
+    color: #f8a407;
+}
+
+body.dark-mode .input-box {
+    border-bottom-color: #666;
+}
+
+body.dark-mode .input-box label,
+body.dark-mode .input-box input,
+body.dark-mode .input-box .icon {
+    color: #e0e0e0;
+}
+
+body.dark-mode .remember-forgot {
+    color: #e0e0e0;
+}
+
+body.dark-mode .remember-forgot a {
+    color: #f8a407;
+}
+
+body.dark-mode .btn {
+    background: #f8a407;
+    color: #1a1a1a;
+}
+
+body.dark-mode .btn:hover {
+    background: #d68f06;
+}
+
+body.dark-mode .login-register {
+    color: #e0e0e0;
+}
+
+body.dark-mode .login-register p a {
+    color: #f8a407;
+}
+
+/* Footer */
+body.dark-mode footer {
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+
+/* Transições suaves */
+body.dark-mode * {
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

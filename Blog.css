@@ -1,0 +1,411 @@
+/* === BLOG.CSS UNIFICADO COM STYLE.CSS === */
+
+/* Herda o visual principal da homepage */
+@import url("style.css");
+
+/* Remove regras antigas de header/nav */
+header, .caixa, nav, .navigation, .header-container, .header-actions {
+    all: unset;
+}
+header {
+    display: block;
+}
+
+/* === HERO DO BLOG === */
+.blog-hero {
+    background: linear-gradient(135deg, #03023a 0%, #f8a407 100%);
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="blog-pattern" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23blog-pattern)"/></svg>');
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    opacity: 0.9;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* === CONTROLES DE BUSCA E FILTRO === */
+.blog-controles {
+    background: #fffdf6;
+    padding: 40px 20px;
+    border-bottom: 3px solid #f8a407;
+}
+
+.search-container {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #f8a407;
+    border-radius: 25px 0 0 25px;
+    font-size: 1em;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #040b44;
+}
+
+.search-btn {
+    padding: 15px 25px;
+    background: #040b44;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-btn:hover {
+    background: #07094f;
+}
+
+.filtros-blog {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.filtro-blog {
+    padding: 10px 25px;
+    background: white;
+    border: 2px solid #f8a407;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.filtro-blog:hover {
+    background: #f8a407;
+    color: white;
+}
+
+.filtro-blog.ativo {
+    background: #040b44;
+    color: white;
+    border-color: #040b44;
+}
+
+/* === LAYOUT PRINCIPAL DO BLOG === */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* === GRID DE ARTIGOS === */
+.blog-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+.artigos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* === ARTIGO EM DESTAQUE === */
+.artigo-destaque {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.artigo-destaque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.artigo-destaque .artigo-imagem {
+    height: 300px;
+    overflow: hidden;
+}
+
+.artigo-destaque .artigo-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.artigo-destaque:hover .artigo-imagem img {
+    transform: scale(1.05);
+}
+
+.artigo-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #f8a407;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.artigo-conteudo {
+    padding: 30px;
+}
+
+.artigo-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.categoria {
+    background: #040b44;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.artigo-destaque h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #03023a;
+}
+
+.artigo-destaque p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.artigo-autor {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.artigo-autor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #f8a407;
+    object-fit: cover;
+}
+
+.autor-nome {
+    font-weight: bold;
+    color: #040b44;
+}
+
+/* === ARTIGOS NORMAIS === */
+.artigo-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.artigo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.artigo-card .artigo-imagem {
+    height: 180px;
+    overflow: hidden;
+}
+
+.artigo-card .artigo-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.artigo-card:hover .artigo-imagem img {
+    transform: scale(1.05);
+}
+
+.artigo-card .artigo-conteudo {
+    padding: 20px;
+}
+
+.artigo-card h3 {
+    font-size: 1.3em;
+    color: #03023a;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.artigo-card p {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* === BOTÃO LER MAIS === */
+.btn-ler-mais {
+    background: #040b44;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-ler-mais:hover {
+    background: #f8a407;
+    color: #fff;
+}
+
+/* === PAGINAÇÃO === */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 20px;
+}
+
+.page-btn {
+    padding: 10px 20px;
+    border: 2px solid #f8a407;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.page-btn:hover {
+    background: #f8a407;
+    color: white;
+}
+
+.page-btn.active {
+    background: #040b44;
+    color: white;
+}
+
+/* === NEWSLETTER === */
+.newsletter-section {
+    background: linear-gradient(135deg, #040b44 0%, #f8a407 100%);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.newsletter-content h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.newsletter-content p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 1em;
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 12px 25px;
+    background: #f8a407;
+    color: white;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: white;
+    color: #040b44;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 968px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        border-radius: 25px;
+    }
+}

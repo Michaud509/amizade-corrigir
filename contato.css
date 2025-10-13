@@ -1,0 +1,36 @@
+/* Título principal */
+.titulo-grande {
+  color: rgb(236, 4, 4);
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Parágrafo especial */
+#paragrafo-especial {
+  font-size: 16px;
+  color: #ece8e6;
+  line-height: 1.6;
+  background-color: #0f279e;
+  padding: 20px;
+  border-left: 5px solid #667eea;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Imagem de contato */
+.imagem-contato {
+  display: block;
+  margin: 0 auto;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.imagem-contato:hover {
+  transform: scale(1.05);
+}

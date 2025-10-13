@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog -AMIZADE PERFUME</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-blog.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="chatbot.css">
+
+</head>
+<body>
+    <script src="dark-mode.js"></script>
+    <header>
+        <div class="caixa">
+            <h1><img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]"></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produto.html">Produtos</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section do Blog -->
+        <section class="blog-hero">
+            <div class="hero-content">
+                <h1>Nosso Blog</h1>
+                <p>Dicas, novidades e tutoriais para quem ama perfumes!</p>
+            </div>
+        </section>
+
+        <!-- Barra de Pesquisa e Filtros -->
+        <section class="blog-controles">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Pesquisar artigos..." class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+            
+            <div class="filtros-blog">
+                <button class="filtro-blog ativo" data-categoria="todas">Todas</button>
+                <button class="filtro-blog" data-categoria="Dicas">Kijan pou chwazi bon odè pou chak okazyon ?</button>
+                <button class="filtro-blog" data-categoria="Novidades">Lanse nouvo koleksyon pafen</button>
+                <button class="filtro-blog" data-categoria="Tutoriais">Kijan pou aplike oswa konbine odè yo ?</button>
+            </div>
+        </section>
+
+        <!-- Grade de Artigos -->
+        <section class="blog-grid">
+            <!-- Artigo em Destaque -->
+            <article class="artigo-destaque" data-categoria="dicas">
+                <div class="artigo-imagem">
+                    <img src="assets/artigo imagem.jpg" alt="Kijan pou chwazi bon odè pou chak okazyon ?">
+                    <span class="artigo-tag">Em Destaque</span>
+                </div>
+                <div class="artigo-conteudo">
+                    <div class="artigo-meta">
+                        <span class="categoria">Dicas</span>
+                        <span class="data">30 Sept 2025</span>
+                        <span class="tempo-leitura">5 min</span>
+                    </div>
+                    <h2>Kijan pou chwazi bon odè pou chak okazyon?</h2>
+                    <p>Odè ou chwazi mete a ka di anpil sou ou. Se poutèt sa li enpòtan pou adapte li ak okazyon an: swa pou ale travay, nan yon rankont, oswa nan yon fèt. Nan atik sa a, n ap ba ou bon konsèy pou w toujou fè bon chwa.</p>
+                    <div class="artigo-autor">
+                        <img src="assets/mB.jpg" alt="Autor">
+                        <div>
+                            <span class="autor-nome">Michaud Bena</span>
+                            <span class="autor-cargo">Consultora de Aromas</span>
+                        </div>
+                    </div>
+                    <button class="btn-ler-mais">Ler Mais</button>
+                </div>
+            </article>
+
+            <!-- Container dos Artigos Normais -->
+            <div class="artigos-container">
+                <!-- Artigo 2 -->
+                <article class="artigo-card" data-categoria="novidades">
+                    <div class="artigo-imagem">
+                        <img src="assets/Novos-Perfumes-Masculinos.jpg" alt="[TÍTULO ARTIGO 2]">
+                    </div>
+                    <div class="artigo-conteudo">
+                        <div class="artigo-meta">
+                            <span class="categoria">Novidades</span>
+                            <span class="data">1 Oct 2025</span>
+                            <span class="tempo-leitura">3 min</span>
+                        </div>
+                        <h3>Lanse nouvo koleksyon pafen</h3>
+                        <p>Nouvo Koleksyon Amizade Perfume 
+
+Nouvo koleksyon parfen Amizade Perfume la rive pou mete plis élégance nan chak moman lavi w.
+Chak parfen nan koleksyon an fèt ak atansyon espesyal pou pote yon eksperyans inik, ki marye stil, emosyon ak pèsonalite.
+
+Élégance Fleurie – yon sant flè ki fre, ideyal pou chak jou.
+
+Intense Nocturne – nòt pwofon, an bwa ak epis santi bon, pafè pou lannuit.
+
+Énergie Lumière – yon melanj sitwonnen ki pote vitalite ak bon vibe.
+
+Amour Secret – yon melanj flè ak vaniy ki envite nan tandrès ak pasyon.
+
+Avèk nouvo koleksyon sa a, chak sant vin tounen siyati w.
+Se pou moun ki renmen kite yon anprint sofistike kote yo pase.</p>
+                        <button class="btn-ler-mais">Ler Mais</button>
+                    </div>
+                </article>
+
+                <!-- Artigo 3 -->
+                <article class="artigo-card" data-categoria="tutoriais">
+                    <div class="artigo-imagem">
+                        <img src="assets/images.jpg" alt="[TÍTULO ARTIGO 3]">
+                    </div>
+                    <div class="artigo-conteudo">
+                        <div class="artigo-meta">
+                            <span class="categoria">Tutoriais</span>
+                            <span class="data">2 Oct 2025</span>
+                            <span class="tempo-leitura">7 min</span>
+                        </div>
+                        <h3>Kijan pou aplike oswa konbine odè yo ?</button>
+            </div></h3>
+                        <p> Kijan pou w Aplike oswa Konbine Odè yo (Layering)
+
+1. Prepare po ou
+Toujou mete odè sou po pwòp ak idrate (apre douch ak yon lotion san odè).
+
+2. Konprann odè yo
+Gen diferan kategori: floral, fwi, bwa, epice, elatriye. Melanje odè ki konplemantè pou jwenn yon bon balans.
+
+3. Teknik pou konbine
+
+Itilize plizyè pwodwi ki gen menm odè (jèl, lotion, parfè)
+
+Oswa melanje 2-3 odè diferan (egzanp: vaniy + sandalwood)
+
+4. Kote pou aplike odè a
+Sou po ki fè chalè: kou, ponyèt, dèyè zòrèy, elatriye. Pa fwote odè a apre w fin mete li.
+
+5. Pa mete twòp
+Yon ti kantite ase. Odè dwe dou, pa anvayisan.
+
+Egzanp bon konbinezon:
+
+Citrus + floral → fre ak dous
+
+Vanil + bwa → sensyèl ak cho
+
+Musk + lavand → natirèl ak kalman
+
+Konsèy: Teste konbinezon yo lakay ou pou w dekouvri odè ki pi mache sou ou.</p>
+                        <button class="btn-ler-mais">Ler Mais</button>
+                    </div>
+                </article>
+
+                <!-- Artigo 4 -->
+                <article class="artigo-card" data-categoria="dicas">
+                    <div class="artigo-imagem">
+                        <img src="assets/WAWA.jpg" alt="[TÍTULO ARTIGO 4]">
+                    </div>
+                    <div class="artigo-conteudo">
+                        <div class="artigo-meta">
+                            <span class="categoria">Dicas</span>
+                            <span class="data">1 Nov 2025</span>
+                            <span class="tempo-leitura">4 min</span>
+                        </div>
+                        <h3>Sezon Nouvo, Odè Nouvo: Konbine l Pi Byen</h3>
+                        <p>Sezon Nouvo, Odè Nouvo: Konbine l Pi Byen
+
+Chak sezon pote yon nouvo atmosfè, ak po ou merite adapte odè ou ak li. Nan sezon cho, odè fre ak fwi tankou citrus oswa floral pi apwopriye. Lè sezon vin pi frèt, chwazi odè ki pi fon tankou vaniy, bwa, oswa musk.
+
+Aprann kijan pou:
+
+Chwazi odè ki matche ak tan an
+
+Melanje (layer) 2-3 odè san yo pa konfwonte
+
+Fè odè ou dire pi lontan chak jou
+
+Konsèy: Se pa kantite odè ki konte, se bon konbinezon an!</p>
+                        <button class="btn-ler-mais">Ler Mais</button>
+                    </div>
+                </article>
+
+                <!-- Artigo 5 -->
+                <article class="artigo-card" data-categoria="novidades">
+                    <div class="artigo-imagem">
+                        <img src="assets/p.jpg" alt="[TÍTULO ARTIGO 5]">
+                    </div>
+                    <div class="artigo-conteudo">
+                        <div class="artigo-meta">
+                            <span class="categoria">Novidades</span>
+                            <span class="data">5 Oct 2025</span>
+                            <span class="tempo-leitura">6 min</span>
+                        </div>
+                        <h3>Odè K’ap Pale Pou Ou: Gid Pou Layering</h3>
+                        <p>Odè K’ap Pale Pou Ou: Gid Pou Layering
+
+Odè ou se yon pati nan pèsonalite w. Li ka dou, fonse, fre, oswa cho – men pi enpòtan an, li dwe reflechi ou. Avèk teknik layering (konbine odè), ou ka kreye yon siynati olfaktif inik ki pale anvan ou menm ouvè bouch ou.
+
+Nan gid sa a, ou ap aprann:
+
+Kijan pou konbine diferan odè san konfli
+
+Ki kote pou aplike odè pou pi bon efè
+
+Bon konbinezon selon tan, okazyon ak sezon
+
+ Astis: Yon bon odè se pa sa tout moun mete, se sa ki mete ou an valè.</p>
+                        <button class="btn-ler-mais">Ler Mais</button>
+                    </div>
+                </article>
+
+                <!-- Artigo 6 -->
+                <article class="artigo-card" data-categoria="tutoriais">
+                    <div class="artigo-imagem">
+                        <img src="assets/nov.jpg" alt="[TÍTULO ARTIGO 6]">
+                    </div>
+                    <div class="artigo-conteudo">
+                        <div class="artigo-meta">
+                            <span class="categoria">Tutoriais</span>
+                            <span class="data">25 Oct 2025</span>
+                            <span class="tempo-leitura">8 min</span>
+                        </div>
+                        <h3>Fòmil Pou Yon Siyati Olfaktif Inoubliyab</h3>
+                        <p>Fòmil Pou Yon Siyati Olfaktif Inoubliyab
+
+Odè ou se mak ou. Li kite tras ou kote ou pase, e li ka fè moun sonje ou menm apre ou fin ale. Yon siyati olfaktif se konbinezon odè ki tèlman byen adapte ak ou, li vin tounen yon pati nan prezans ou.
+
+Nan atik sa a, w ap dekouvri:
+
+Ki jan pou w chwazi odè ki matche ak pèsonalite w
+
+Kijan pou w konbine (layer) odè pou kreye yon style pa w
+
+Konsepsyon odè pou diferan moman: travay, randevou, fèt
+
+Tip: Se pa odè ki pi fò ki pi bon, se sa ki pi memorab.</p>
+                        <button class="btn-ler-mais">Ler Mais</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Paginação -->
+        <div class="paginacao">
+            <button class="page-btn" data-page="prev">← Anterior</button>
+            <button class="page-btn active" data-page="1">1</button>
+            <button class="page-btn" data-page="2">2</button>
+            <button class="page-btn" data-page="3">3</button>
+            <button class="page-btn" data-page="next">Próximo →</button>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h3>Assine Nossa Newsletter</h3>
+                <p>Receba os melhores artigos diretamente no seu email</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu melhor email" required>
+                    <button type="submit">Assinar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]">
+        <p class="copyright">&copy; Copyright AMIZADE PERFUME - 2025</p>
+    </footer>
+
+    <!-- JavaScript do Blog -->
+    <script>
+        // Filtros do Blog
+        const filtrosBlog = document.querySelectorAll('.filtro-blog');
+        const artigos = document.querySelectorAll('.artigo-card, .artigo-destaque');
+
+        filtrosBlog.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filtrosBlog.forEach(f => f.classList.remove('ativo'));
+                this.classList.add('ativo');
+                
+                const categoria = this.getAttribute('data-categoria');
+                
+                artigos.forEach(artigo => {
+                    if(categoria === 'todas' || artigo.getAttribute('data-categoria') === categoria) {
+                        artigo.style.display = 'block';
+                        artigo.style.animation = 'fadeIn 0.5s';
+                    } else {
+                        artigo.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Pesquisa
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.querySelector('.search-btn');
+
+        function pesquisarArtigos() {
+            const termo = searchInput.value.toLowerCase();
+            
+            artigos.forEach(artigo => {
+                const titulo = artigo.querySelector('h2, h3').textContent.toLowerCase();
+                const resumo = artigo.querySelector('p').textContent.toLowerCase();
+                
+                if(titulo.includes(termo) || resumo.includes(termo) || termo === '') {
+                    artigo.style.display = 'block';
+                } else {
+                    artigo.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', pesquisarArtigos);
+        searchBtn.addEventListener('click', pesquisarArtigos);
+
+        // Paginação
+        const pageBtns = document.querySelectorAll('.page-btn');
+        
+        pageBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(!this.classList.contains('active')) {
+                    pageBtns.forEach(p => p.classList.remove('active'));
+                    if(this.getAttribute('data-page') !== 'prev' && this.getAttribute('data-page') !== 'next') {
+                        this.classList.add('active');
+                    }
+                    
+                    // Simula carregamento de nova página
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }
+            });
+        });
+
+        // Newsletter
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert('Obrigado! Email ' + email + ' cadastrado com sucesso!');
+            this.reset();
+        });
+
+        // Animação de entrada
+        const observador = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.6s ease forwards';
+                }
+            });
+        });
+
+        document.querySelectorAll('.artigo-card').forEach(card => {
+            observador.observe(card);
+        });
+    </script>
+
+     <!-- WIDGET DO CHATBOT - Adicionar antes do </body> em todas as páginas -->
+
+<!-- Botão Flutuante do Chat -->
+<div class="chat-widget">
+    <div class="chat-button" id="chatButton">
+        <svg class="chat-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+        </svg>
+        <svg class="close-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+        <span class="chat-badge" id="chatBadge">1</span>
+    </div>
+
+    <!-- Janela do Chat -->
+    <div class="chat-window" id="chatWindow">
+        <!-- Header do Chat -->
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <img src="imagens/logo.png" alt="Assistente">
+            </div>
+            <div class="chat-info">
+                <h4>AMIZADE PER</h4>
+                <span class="chat-status online">Online agora</span>
+            </div>
+            <div class="chat-actions">
+                <button class="minimize-btn" id="minimizeChat">−</button>
+                <button class="close-chat-btn" id="closeChatBtn">×</button>
+            </div>
+        </div>
+
+        <!-- Área de Mensagens -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <img src="assets/LOGO A.png" alt="Bot">
+                </div>
+                <div class="message-content">
+                    <p>Olá! 👋 Sou o assistente virtual da AMIZADE PERFUME. Como posso ajudá-lo hoje?</p>
+                    <span class="message-time">Agora</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sugestões Rápidas -->
+        <div class="quick-suggestions" id="quickSuggestions">
+            <button class="suggestion-btn" data-suggestion="horarios">📅 Horários</button>
+            <button class="suggestion-btn" data-suggestion="servicos">💼 Serviços</button>
+            <button class="suggestion-btn" data-suggestion="contato">📞 Contato</button>
+            <button class="suggestion-btn" data-suggestion="localizacao">📍 Localização</button>
+        </div>
+
+        <!-- Área de Input -->
+        <div class="chat-input-area">
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Digite sua mensagem..." maxlength="500">
+                <button class="send-btn" id="sendBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="chat-footer">
+                <span class="typing-indicator" id="typingIndicator" style="display: none;">
+                    <span></span><span></span><span></span>
+                    Digitando...
+                </span>
+                <button class="whatsapp-btn" id="whatsappBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.53 3.488"/>
+                    </svg>
+                    Continuar no WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificação de Nova Mensagem -->
+    <div class="chat-notification" id="chatNotification" style="display: none;">
+        <div class="notification-content">
+            <strong>Nova mensagem!</strong>
+            <p>O assistente respondeu sua pergunta</p>
+        </div>
+    </div>
+</div>
+<script src="chatbot.js"></script>
+
+</body>
+</html>
