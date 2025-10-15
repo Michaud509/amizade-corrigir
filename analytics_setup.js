@@ -218,6 +218,7 @@ class AnalyticsManager {
                 whatsappBtn.addEventListener('click', () => {
                     this.trackEvent('chat_interaction', {
                         action: 'whatsapp_redirect',
+                        business_type: 'Escola de Idiomas',
                         interaction_type: 'widget'
                     });
                 });
@@ -328,26 +329,13 @@ class AnalyticsManager {
 
     // Métricas customizadas
     trackBusinessMetrics() {
-        // Exemplo: rastrear interesse por produtos/serviços
-        const productViews = document.querySelectorAll('.produtos li, .artigo-card');
-        productViews.forEach((item, index) => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const productName = entry.target.querySelector('h3, h2')?.textContent || `produto_${index}`;
-                        this.trackEvent('product_view', {
-                            product_name: productName,
-                            product_position: index + 1,
-                            page_type: window.location.pathname.includes('produtos') ? 'products' : 'blog'
-                        });
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            observer.observe(item);
-        });
-    }
+// Adicione informações do seu tipo de negócio
+this.trackEvent('business_info', {
+business_type: 'EScola de Idiomas', // Exemplo
+location: 'cascavel_pr',
+services_offered: ['Curso de Ingles', 'Curso de Alemão', 'Curso de Espanhol']
+});
+}
 
     // Relatório de sessão (para debug)
     getSessionReport() {
