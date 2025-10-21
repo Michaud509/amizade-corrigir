@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Online - [SEU NEGÓCIO]</title>
+    
+    <!-- CSS do Projeto -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="agendamento.css">
+</head>
+<body>
+<!-- Header com Navegação -->
+<header>
+    <div class="header-container">
+        <h1 class="titulo-principal">AMIZADE PERFUME</h1>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="dark-mode-toggle" id="darkModeToggle">
+                <span class="toggle-icon moon-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+
+            <button class="btnLogin-popup">Login</button>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <h2 class="titulo-principal-produtos">Agendamento Online</h2>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Serviço</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Data e Hora</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Dados</div>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Confirmação</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container Principal -->
+        <div class="agendamento-container">
+            <!-- ETAPA 1: Seleção de Serviço -->
+            <div class="etapa active" id="etapa1">
+                <h3>Escolha o Serviço</h3>
+                <p class="etapa-descricao">Selecione o serviço que deseja agendar</p>
+
+                <div class="servicos-grid">
+                    <!-- Serviço 1 - PERSONALIZE -->
+                    <div class="servico-card" data-servico="servico1" data-duracao="60" data-preco="80.00">
+                        <div class="servico-icon">💼</div>
+                        <h4>Serviço 1</h4>
+                        <p class="servico-descricao">Olhando Perfume Popular</p>
+                        <div class="servico-info">
+                            <span class="servico-duracao">⏱️ 20 min</span>
+                            <span class="servico-preco">R$ 80,00</span>
+                        </div>
+                        <button class="btn-selecionar" onclick="selecionarServico(this)">Selecionar</button>
+                    </div>
+
+                    <!-- Serviço 2 - PERSONALIZE -->
+                    <div class="servico-card" data-servico="servico2" data-duracao="90" data-preco="120.00">
+                        <div class="servico-icon">⭐</div>
+                        <h4>Serviço 2</h4>
+                        <p class="servico-descricao">Perfume Araba</p>
+                        <div class="servico-info">
+                            <span class="servico-duracao">⏱️ 20 min</span>
+                            <span class="servico-preco">R$ 220,00</span>
+                        </div>
+                        <button class="btn-selecionar" onclick="selecionarServico(this)">Selecionar</button>
+                    </div>
+
+                    <!-- Serviço 3 - PERSONALIZE -->
+                    <div class="servico-card" data-servico="servico3" data-duracao="30" data-preco="50.00">
+                        <div class="servico-icon">🎯</div>
+                        <h4>Serviço 3</h4>
+                        <p class="servico-descricao">Perfume Frances</p>
+                        <div class="servico-info">
+                            <span class="servico-duracao">⏱️ 30 min</span>
+                            <span class="servico-preco">R$ 50,00</span>
+                        </div>
+                        <button class="btn-selecionar" onclick="selecionarServico(this)">Selecionar</button>
+                    </div>
+
+                    <!-- Adicione mais serviços conforme necessário -->
+                </div>
+            </div>
+
+            <!-- ETAPA 2: Seleção de Data e Hora -->
+            <div class="etapa" id="etapa2">
+                <h3>Escolha Data e Horário</h3>
+                <p class="etapa-descricao">Selecione o dia e horário de sua preferência</p>
+
+                <div class="calendario-horario-container">
+                    <!-- Calendário -->
+                    <div class="calendario-wrapper">
+                        <div class="calendario-header">
+                            <button class="btn-mes" id="mesAnterior">❮</button>
+                            <h4 id="mesAnoAtual">Janeiro 2025</h4>
+                            <button class="btn-mes" id="proximoMes">❯</button>
+                        </div>
+                        <div class="calendario-dias-semana">
+                            <div>Dom</div>
+                            <div>Seg</div>
+                            <div>Ter</div>
+                            <div>Qua</div>
+                            <div>Qui</div>
+                            <div>Sex</div>
+                            <div>Sáb</div>
+                        </div>
+                        <div class="calendario-dias" id="calendarioDias">
+                            <!-- Dias serão gerados pelo JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Horários Disponíveis -->
+                    <div class="horarios-wrapper">
+                        <h4>Horários Disponíveis</h4>
+                        <div class="horarios-info">
+                            <p id="dataSelcionadaTexto">29/02/2026</p>
+                        </div>
+                        <div class="horarios-grid" id="horariosGrid">
+                            <!-- Horários serão gerados pelo JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="etapa-navegacao">
+                    <button class="btn-voltar" onclick="voltarEtapa()">← Voltar</button>
+                    <button class="btn-proximo" onclick="proximaEtapa()" disabled id="btnProximoEtapa2">Próximo →</button>
+                </div>
+            </div>
+
+            <!-- ETAPA 3: Dados do Cliente -->
+            <div class="etapa" id="etapa3">
+                <h3>Seus Dados</h3>
+                <p class="etapa-descricao">Para garantir o seu atendimento personalizado em nossa loja de perfumes, por favor, preencha suas informações abaixo:
+
+                    Nome completo:
+                    Telefone (WhatsApp):
+                    Data do agendamento:
+                    Horário desejado:
+                    Serviço ou atendimento desejado: (ex: teste de fragrâncias, consultoria personalizada, retirada de pedido, etc.)</p>
+
+                <form class="form-dados" id="formDados">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" required placeholder="Seu nome completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" required placeholder="seu@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefone">Telefone/WhatsApp *</label>
+                            <input type="tel" id="telefone" required placeholder="(00) 00000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input type="text" id="cpf" placeholder="000.000.000-00">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observacoes">Observações (opcional)</label>
+                        <textarea id="observacoes" rows="4" placeholder="Alguma informação adicional que gostaria de compartilhar..."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="confirmaInfo" required>
+                            <span class="checkbox-custom"></span>
+                            Confirmo que as informações estão corretas
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="aceitaTermos" required>
+                            <span class="checkbox-custom"></span>
+                            Li e aceito os <a href="#" class="link-termos">termos de agendamento</a>
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="lembretes">
+                            <span class="checkbox-custom"></span>
+                            Desejo receber lembretes por WhatsApp/E-mail
+                        </label>
+                    </div>
+                </form>
+
+                <div class="etapa-navegacao">
+                    <button class="btn-voltar" onclick="voltarEtapa()">← Voltar</button>
+                    <button class="btn-proximo" onclick="proximaEtapa()">Revisar Agendamento →</button>
+                </div>
+            </div>
+
+            <!-- ETAPA 4: Confirmação -->
+            <div class="etapa" id="etapa4">
+                <h3>Confirmar Agendamento</h3>
+                <p class="etapa-descricao">Revise suas informações antes de confirmar</p>
+
+                <div class="resumo-agendamento">
+                    <div class="resumo-card">
+                        <div class="resumo-icon">💼</div>
+                        <div class="resumo-info">
+                            <span class="resumo-label">Serviço</span>
+                            <span class="resumo-valor" id="resumoServico">-</span>
+                        </div>
+                    </div>
+
+                    <div class="resumo-card">
+                        <div class="resumo-icon">📅</div>
+                        <div class="resumo-info">
+                            <span class="resumo-label">Data</span>
+                            <span class="resumo-valor" id="resumoData">-</span>
+                        </div>
+                    </div>
+
+                    <div class="resumo-card">
+                        <div class="resumo-icon">⏰</div>
+                        <div class="resumo-info">
+                            <span class="resumo-label">Horário</span>
+                            <span class="resumo-valor" id="resumoHorario">-</span>
+                        </div>
+                    </div>
+
+                    <div class="resumo-card">
+                        <div class="resumo-icon">⏱️</div>
+                        <div class="resumo-info">
+                            <span class="resumo-label">Duração</span>
+                            <span class="resumo-valor" id="resumoDuracao">-</span>
+                        </div>
+                    </div>
+
+                    <div class="resumo-card">
+                        <div class="resumo-icon">💰</div>
+                        <div class="resumo-info">
+                            <span class="resumo-label">Valor</span>
+                            <span class="resumo-valor" id="resumoValor">-</span>
+                        </div>
+                    </div>
+
+                    <div class="resumo-card">
+                        <div class="resumo-icon">👤</div>
+                        <div class="resumo-info">
+                            <span class="resumo-label">Cliente</span>
+                            <span class="resumo-valor" id="resumoNome">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="confirmacao-final">
+                    <div class="confirmacao-aviso">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        <p>Você receberá uma confirmação por e-mail e WhatsApp com os detalhes do agendamento.</p>
+                    </div>
+
+                    <div class="politica-cancelamento">
+                        <h4>Política de Cancelamento</h4>
+                        <ul>
+                            <li>Cancelamento gratuito até 24h antes do horário agendado</li>
+                            <li>Reagendamento disponível até 12h antes</li>
+                            <li>Em caso de atraso, aguardaremos por 15 minutos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="etapa-navegacao">
+                    <button class="btn-voltar" onclick="voltarEtapa()">← Voltar</button>
+                    <button class="btn-confirmar" onclick="confirmarAgendamento()">✓ Confirmar Agendamento</button>
+                </div>
+            </div>
+
+            <!-- Modal de Sucesso -->
+            <div class="modal-sucesso" id="modalSucesso">
+                <div class="modal-content">
+                    <div class="sucesso-icon">✓</div>
+                    <h3>Agendamento Confirmado!</h3>
+                    <p>Seu agendamento foi realizado com sucesso.</p>
+                    <div class="sucesso-codigo">
+                        <span>Código de Confirmação:</span>
+                        <strong id="codigoConfirmacao">AG-00000</strong>
+                    </div>
+                    <p class="sucesso-info">Enviamos uma confirmação para seu e-mail e WhatsApp com todos os detalhes.</p>
+                    <div class="sucesso-acoes">
+                        <button class="btn-adicionar-calendario" onclick="adicionarCalendario()">
+                            📅 Adicionar ao Calendário
+                        </button>
+                        <button class="btn-novo-agendamento" onclick="novoAgendamento()">
+                            🔄 Novo Agendamento
+                        </button>
+                        <button class="btn-voltar-home" onclick="window.location.href='index.html'">
+                            🏠 Voltar ao Início
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Ajuda -->
+        <section class="ajuda-section">
+            <h3>Precisa de Ajuda?</h3>
+            <div class="ajuda-grid">
+                <div class="ajuda-card">
+                    <div class="ajuda-icon">📞</div>
+                    <h4>Atendimento</h4>
+                    <p>Ligue: 45097400-2054</p>
+                    <p>WhatsApp:  45097400-2054</p>
+                </div>
+                <div class="ajuda-card">
+                    <div class="ajuda-icon">❓</div>
+                    <h4>Dúvidas Frequentes</h4>
+                    <p>Consulte nossa <a href="contato.html">página de FAQ</a></p>
+                </div>
+                <div class="ajuda-card">
+                    <div class="ajuda-icon">🕒</div>
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Seg-Sex: 8h às 18h</p>
+                    <p>Sáb: 8h às 14h</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]" width="50px">
+        <p class="copyright">&copy; Copyright AMIZADE PERFUME - 2025</p>
+    </footer>
+
+    <!-- Script do Agendamento -->
+    <script src="agendamento.js"></script>
+</body>
+</html>
