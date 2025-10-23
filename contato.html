@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - AMIZADE PERFUME</title>
     <link rel="stylesheet" href="contato.css">
     <link rel="stylesheet" href="dark-mode.css">
     <link rel="stylesheet" href="chatbot.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cookie-consent.css">
-    <title>Contato</title>
 </head>
 <body>
 <!-- Header com Navegação -->
@@ -20,6 +20,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="produto.html">Produtos</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="agendamento.html">Agendamento</a></li>
             </ul>
@@ -30,27 +31,103 @@
                 <span class="toggle-icon moon-icon">🌙</span>
                 <span class="toggle-text">Dark Mode</span>
             </button>
-
             <button class="btnLogin-popup">Login</button>
         </div>
     </div>
 </header>
-</body>
-</html>
-<h1 style="color:red;font: size 30px;"class="titulo grade"> Contato</h1>
-<p id="paragrafo-especial">Fale Conosco
-    Estamos prontos para ouvir você. Seja para tirar dúvidas, solicitar informações, 
-    enviar sugestões ou tratar de parcerias, nosso time está à disposição.
-    📧 E-mail:michaudbena8@gmail.com
-    📞 Telefone/WhatsApp: (46) 99103-2063
-    📍 Endereço: Rua Sevino casagrande 173 – Bairro Alto alegrel – Cascavel/PR
-    
-    Preencha o formulário abaixo ou entre em contato pelos canais disponíveis.
-    Responderemos o mais breve possível.
-</p>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSYfj-7jIPREHsx_XEkpt5IjcVH9O_EmAVKw&s" alt="imagem-de-contato" width="150">
 
-<!-- WIDGET DO CHATBOT - Adicionar antes do </body> em todas as páginas -->
+    <main>
+        <h1 style="color:red;font-size:30px;" class="titulo-grade">Contato</h1>
+        <p id="paragrafo-especial">Fale Conosco
+            Estamos prontos para ouvir você. Seja para tirar dúvidas, solicitar informações, 
+            enviar sugestões ou tratar de parcerias, nosso time está à disposição.
+            📧 E-mail:michaudbena8@gmail.com
+            📞 Telefone/WhatsApp: (46) 99103-2063
+            📍 Endereço: Rua Sevino casagrande 173 – Bairro Alto alegrel – Cascavel/PR
+            
+            Preencha o formulário abaixo ou entre em contato pelos canais disponíveis.
+            Responderemos o mais breve possível.
+        </p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSYfj-7jIPREHsx_XEkpt5IjcVH9O_EmAVKw&s" alt="imagem-de-contato" width="150">
+    </main>
+
+    <!-- Modal de Login/Registro -->
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <!-- Formulário de Login -->
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulário de Registro -->
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <img src="assets/LOGO A.png" alt="Logo AMIZADE PERFUME" width="50px">
+        <p class="copyright">&copy; Copyright AMIZADE PERFUME - 2025</p>
+    </footer>
+
+    <!-- WIDGET DO CHATBOT - Adicionar antes do </body> em todas as páginas -->
 
 <!-- Botão Flutuante do Chat -->
 <div class="chat-widget">
@@ -135,7 +212,12 @@
         </div>
     </div>
 </div>
+
     <script src="dark-mode.js"></script>
     <script src="chatbot.js"></script>
     <script src="analytics-setup.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
 </html>

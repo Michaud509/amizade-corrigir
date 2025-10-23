@@ -1,146 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<section class="faq-section">
-    <h2 class="titulo-centralizado">Perguntas Frequentes</h2>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - AMIZADE PERFUME</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="faq-section.css">
     <link rel="stylesheet" href="Galeria.css">
     <link rel="stylesheet" href="dark-mode.css">
     <link rel="stylesheet" href="chatbot.css">
-
-
-    <script src="dark-mode.js"></script>
-    
-    <div class="faq-container">
-        <!-- Pergunta 1 -->
-        <div class="faq-item">
-            <input type="checkbox" id="faq1" class="faq-toggle">
-            <label for="faq1" class="faq-pergunta">
-                <span> Quais são os horários de atendimento?</span>
-                <svg class="faq-icon" viewBox="0 0 24 24">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </label>
-            <div class="faq-resposta">
-                <p> Atendemos de segunda a sexta das 8h às 18h e aos sábados das 8h às 14h </p>
-            </div>
-        </div>
-
-        <!-- Pergunta 2 -->
-        <div class="faq-item">
-            <input type="checkbox" id="faq2" class="faq-toggle">
-            <label for="faq2" class="faq-pergunta">
-                <span> Quais formas de pagamento são aceitas? </span>
-                <svg class="faq-icon" viewBox="0 0 24 24">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </label>
-            <div class="faq-resposta">
-                <p> Aceitamos dinheiro, cartões de crédito/débito, PIX e transferência bancária </p>
-            </div>
-        </div>
-
-        <!-- Pergunta 3 -->
-        <div class="faq-item">
-            <input type="checkbox" id="faq3" class="faq-toggle">
-            <label for="faq3" class="faq-pergunta">
-                <span> É necessário agendamento prévio? </span>
-                <svg class="faq-icon" viewBox="0 0 24 24">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </label>
-            <div class="faq-resposta">
-                <p> Recomendamos agendamento para garantir o melhor atendimento, mas também aceitamos clientes sem hora marcada </p>
-            </div>
-        </div>
-
-        <!-- Pergunta 4 -->
-        <div class="faq-item">
-            <input type="checkbox" id="faq4" class="faq-toggle">
-            <label for="faq4" class="faq-pergunta">
-                <span> Vocês oferecem garantia? </span>
-                <svg class="faq-icon" viewBox="0 0 24 24">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </label>
-            <div class="faq-resposta">
-                <p> Sim! Todos nossos serviços possuem garantia de 30 dias.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SEÇÃO DE DEPOIMENTOS COM CARDS ROTATIVOS -->
-<section class="depoimentos">
-    <h2 class="titulo-centralizado">O que nossos clientes dizem</h2>
-    
-    <div class="depoimentos-container">
-        <input type="radio" name="depoimento" id="dep1" checked>
-        <input type="radio" name="depoimento" id="dep2">
-        <input type="radio" name="depoimento" id="dep3">
-        
-        <div class="depoimentos-cards">
-            <!-- Card 1 -->
-            <div class="depoimento-card">
-                <div class="aspas">"</div>
-                <p class="depoimento-texto">
-                     Excelente atendimento! A equipe é muito profissional e atenciosa. Superou minhas expectativas!
-                     
-                </p>
-                <div class="depoimento-autor">
-                    <img src="assets/kim.png" alt="[NOME CLIENTE 1]">
-                    <div>
-                        <h4>Pierre Anne Kemberlie</h4>
-                        <span>Amizade</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="depoimento-card">
-                <div class="aspas">"</div>
-                <p class="depoimento-texto">
-                     Serviço impecável! Recomendo a todos que buscam qualidade e bom atendimento.
-                </p>
-                <div class="depoimento-autor">
-                    <img src="assets/da.png" alt="[NOME CLIENTE 2]">
-                    <div>
-                        <h4>Danaee</h4>
-                        <span>Parfum</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="depoimento-card">
-                <div class="aspas">"</div>
-                <p class="depoimento-texto">
-                     Melhor escolha que fiz! Produtos de qualidade e preço justo.
-                </p>
-                <div class="depoimento-autor">
-                    <img src="/assets/dibango.png" alt="[NOME CLIENTE 3]">
-                    <div>
-                        <h4>Dibango</h4>
-                        <span>Spray</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Indicadores -->
-        <div class="depoimentos-nav">
-            <label for="dep1" class="nav-dot"></label>
-            <label for="dep2" class="nav-dot"></label>
-            <label for="dep3" class="nav-dot"></label>
-        </div>
-    </div>
-</section>, initial-scale=1.0">
-    <title>Document</title>
 </head>
 <body>
-    
+<!-- Header com Navegação -->
+<header>
+    <div class="header-container">
+        <h1 class="titulo-principal">AMIZADE PERFUME</h1>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="dark-mode-toggle" id="darkModeToggle">
+                <span class="toggle-icon moon-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+            <button class="btnLogin-popup">Login</button>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section class="faq-section">
+            <h2 class="titulo-centralizado">Perguntas Frequentes</h2>
+            
+            <div class="faq-container">
+                <!-- Pergunta 1 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1" class="faq-toggle">
+                    <label for="faq1" class="faq-pergunta">
+                        <span> Quais são os horários de atendimento?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </label>
+                    <div class="faq-resposta">
+                        <p> Atendemos de segunda a sexta das 8h às 18h e aos sábados das 8h às 14h </p>
+                    </div>
+                </div>
+
+                <!-- Pergunta 2 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2" class="faq-toggle">
+                    <label for="faq2" class="faq-pergunta">
+                        <span> Quais formas de pagamento são aceitas? </span>
+                        <svg class="faq-icon" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </label>
+                    <div class="faq-resposta">
+                        <p> Aceitamos dinheiro, cartões de crédito/débito, PIX e transferência bancária </p>
+                    </div>
+                </div>
+
+                <!-- Pergunta 3 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq3" class="faq-toggle">
+                    <label for="faq3" class="faq-pergunta">
+                        <span> É necessário agendamento prévio? </span>
+                        <svg class="faq-icon" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </label>
+                    <div class="faq-resposta">
+                        <p> Recomendamos agendamento para garantir o melhor atendimento, mas também aceitamos clientes sem hora marcada </p>
+                    </div>
+                </div>
+
+                <!-- Pergunta 4 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq4" class="faq-toggle">
+                    <label for="faq4" class="faq-pergunta">
+                        <span> Vocês oferecem garantia? </span>
+                        <svg class="faq-icon" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </label>
+                    <div class="faq-resposta">
+                        <p> Sim! Todos nossos serviços possuem garantia de 30 dias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE DEPOIMENTOS COM CARDS ROTATIVOS -->
+        <section class="depoimentos">
+            <h2 class="titulo-centralizado">O que nossos clientes dizem</h2>
+            
+            <div class="depoimentos-container">
+                <input type="radio" name="depoimento" id="dep1" checked>
+                <input type="radio" name="depoimento" id="dep2">
+                <input type="radio" name="depoimento" id="dep3">
+                
+                <div class="depoimentos-cards">
+                    <!-- Card 1 -->
+                    <div class="depoimento-card">
+                        <div class="aspas">"</div>
+                        <p class="depoimento-texto">
+                             Excelente atendimento! A equipe é muito profissional e atenciosa. Superou minhas expectativas!
+                             
+                        </p>
+                        <div class="depoimento-autor">
+                            <img src="assets/kim.png" alt="[NOME CLIENTE 1]">
+                            <div>
+                                <h4>Pierre Anne Kemberlie</h4>
+                                <span>Amizade</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="depoimento-card">
+                        <div class="aspas">"</div>
+                        <p class="depoimento-texto">
+                             Serviço impecável! Recomendo a todos que buscam qualidade e bom atendimento.
+                        </p>
+                        <div class="depoimento-autor">
+                            <img src="assets/da.png" alt="[NOME CLIENTE 2]">
+                            <div>
+                                <h4>Danaee</h4>
+                                <span>Parfum</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="depoimento-card">
+                        <div class="aspas">"</div>
+                        <p class="depoimento-texto">
+                             Melhor escolha que fiz! Produtos de qualidade e preço justo.
+                        </p>
+                        <div class="depoimento-autor">
+                            <img src="assets/dibango.png" alt="[NOME CLIENTE 3]">
+                            <div>
+                                <h4>Dibango</h4>
+                                <span>Spray</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Indicadores -->
+                <div class="depoimentos-nav">
+                    <label for="dep1" class="nav-dot"></label>
+                    <label for="dep2" class="nav-dot"></label>
+                    <label for="dep3" class="nav-dot"></label>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Login/Registro -->
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <!-- Formulário de Login -->
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulário de Registro -->
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <img src="assets/LOGO A.png" alt="Logo AMIZADE PERFUME" width="50px">
+        <p class="copyright">&copy; Copyright AMIZADE PERFUME - 2025</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="dark-mode.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- WIDGET DO CHATBOT - Adicionar antes do </body> em todas as páginas -->
+
+<!-- Botão Flutuante do Chat -->
+<div class="chat-widget">
+    <div class="chat-button" id="chatButton">
+        <svg class="chat-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+        </svg>
+        <svg class="close-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+        <span class="chat-badge" id="chatBadge">1</span>
+    </div>
+
+    <!-- Janela do Chat -->
+    <div class="chat-window" id="chatWindow">
+        <!-- Header do Chat -->
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <img src="assets/Gemini_Generated_Image_14dwqs14dwqs14dw.png" alt="Assistente">
+            </div>
+            <div class="chat-info">
+                <h4>AMIZADE PERFUME</h4>
+                <span class="chat-status online">Online agora</span>
+            </div>
+            <div class="chat-actions">
+                <button class="minimize-btn" id="minimizeChat">−</button>
+                <button class="close-chat-btn" id="closeChatBtn">×</button>
+            </div>
+        </div>
+
+        <!-- Área de Mensagens -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <img src="assets/LOGO A.png" alt="Bot">
+                </div>
+                <div class="message-content">
+                    <p>Olá! 👋 Sou o assistente virtual da AMIZADE PERFUME. Como posso ajudá-lo hoje?</p>
+                    <span class="message-time">Agora</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sugestões Rápidas -->
+        <div class="quick-suggestions" id="quickSuggestions">
+            <button class="suggestion-btn" data-suggestion="horarios">📅 8h-17h</button>
+            <button class="suggestion-btn" data-suggestion="servicos">💼 Impreçao,Perfume</button>
+            <button class="suggestion-btn" data-suggestion="contato">📞 34140941</button>
+            <button class="suggestion-btn" data-suggestion="localizacao">📍 Rua Selvino Casagrande </button>
+        </div>
+
+        <!-- Área de Input -->
+        <div class="chat-input-area">
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Digite sua mensagem..." maxlength="500">
+                <button class="send-btn" id="sendBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="chat-footer">
+                <span class="typing-indicator" id="typingIndicator" style="display: none;">
+                    <span></span><span></span><span></span>
+                    Digitando...
+                </span>
+                <button class="whatsapp-btn" id="whatsappBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.53 3.488"/>
+                    </svg>
+                    Continuar no WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificação de Nova Mensagem -->
+    <div class="chat-notification" id="chatNotification" style="display: none;">
+        <div class="notification-content">
+            <strong>Nova mensagem!</strong>
+            <p>O assistente respondeu sua pergunta</p>
+        </div>
+    </div>
+</div>
+
+<script src="chatbot.js"></script>
 </body>
 </html>

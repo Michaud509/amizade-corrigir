@@ -4,28 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria - AMIZADE PERFUME</title>
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="Galeria.css">
     <link rel="stylesheet" href="dark-mode.css">
     <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="Galeria.css">
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="Blog.css">
     <link rel="stylesheet" href="cookie-consent.css">
+    <link rel="stylesheet" href="agendamento.css">
 </head>
 <body>
-    <script src="dark-mode.js"></script>
-    <header>
-        <div class="caixa">
-            <img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]" height="100">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="galeria.html">Galeria</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
+<!-- Header com Navegação -->
+<header>
+    <div class="header-container">
+        <h1 class="titulo-principal">AMIZADE PERFUME</h1>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="dark-mode-toggle" id="darkModeToggle">
+                <span class="toggle-icon moon-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+            <button class="btnLogin-popup">Login</button>
         </div>
-    </header>
+    </div>
+</header>
 
     <main>
         <h2 class="titulo-principal-produtos">Nossa Galeria</h2>
@@ -136,74 +148,178 @@
         </section>
     </main>
 
+    <!-- Modal de Login/Registro -->
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <!-- Formulário de Login -->
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulário de Registro -->
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <footer>
-        <img src="assets/logo A.png" alt="Logo [SEU NEGÓCIO]" style="width: 200px;">
-        <p class="copyright">&copy; Copyright AMIZADE PERFUME- 2025</p>
+        <img src="assets/LOGO A.png" alt="Logo AMIZADE PERFUME" width="50px">
+        <p class="copyright">&copy; Copyright AMIZADE PERFUME - 2025</p>
     </footer>
 
     <!-- JavaScript da Galeria -->
     <script>
-        // Filtro da Galeria
-        const filtros = document.querySelectorAll('.filtro-btn');
-        const itens = document.querySelectorAll('.galeria-item');
+        // Filtros
+        const filtroBtns = document.querySelectorAll('.filtro-btn');
+        const galeriaItems = document.querySelectorAll('.galeria-item');
 
-        filtros.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Remove classe ativo de todos
-                filtros.forEach(f => f.classList.remove('ativo'));
-                // Adiciona classe ativo no clicado
-                this.classList.add('ativo');
-                
-                const filtro = this.getAttribute('data-filtro');
-                
-                itens.forEach(item => {
-                    if(filtro === 'todos' || item.getAttribute('data-categoria') === filtro) {
+        filtroBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filtroBtns.forEach(b => b.classList.remove('ativo'));
+                btn.classList.add('ativo');
+
+                const filtro = btn.dataset.filtro;
+
+                galeriaItems.forEach(item => {
+                    if(filtro === 'todos' || item.dataset.categoria === filtro) {
                         item.style.display = 'block';
-                        item.style.animation = 'fadeIn 0.5s';
+                        setTimeout(() => item.style.opacity = 1, 10);
                     } else {
-                        item.style.display = 'none';
+                        item.style.opacity = 0;
+                        setTimeout(() => item.style.display = 'none', 300);
                     }
                 });
             });
         });
 
-        // Modal/Lightbox
+        // Lightbox/Modal
         const modal = document.getElementById('modalGaleria');
         const modalImg = document.getElementById('modalImagem');
-        const modalCaption = document.getElementById('modalCaption');
-        const verMaisBtns = document.querySelectorAll('.btn-ver-mais');
+        const captionText = document.getElementById('modalCaption');
         const fecharModal = document.querySelector('.fechar-modal');
+        const btnVerMais = document.querySelectorAll('.btn-ver-mais');
+        let currentIndex = 0;
 
-        verMaisBtns.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const item = this.closest('.galeria-item');
-                const img = item.querySelector('img');
-                const titulo = item.querySelector('h3').textContent;
-                const descricao = item.querySelector('p').textContent;
-                
-                modal.style.display = 'block';
-                modalImg.src = img.src;
-                modalCaption.innerHTML = `<h3>${titulo}</h3><p>${descricao}</p>`;
+        const abrirModal = (index) => {
+            currentIndex = index;
+            atualizarModal();
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        };
+
+        const atualizarModal = () => {
+            const item = galeriaItems[currentIndex];
+            modalImg.src = item.querySelector('img').src;
+            captionText.innerHTML = `
+                <h3>${item.querySelector('h3').textContent}</h3>
+                <p>${item.querySelector('p').textContent}</p>
+            `;
+        };
+
+        btnVerMais.forEach((btn, index) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                abrirModal(index);
             });
         });
 
-        fecharModal.onclick = function() {
+        fecharModal.addEventListener('click', () => {
             modal.style.display = 'none';
-        }
+            document.body.style.overflow = 'auto';
+        });
 
-        modal.onclick = function(e) {
+        modal.addEventListener('click', (e) => {
             if(e.target === modal) {
-                modal.style.display = 'none';
+                fecharModal.click();
             }
-        }
+        });
 
-        // Contador animado
+        // Navegação do Modal
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : galeriaItems.length - 1;
+            atualizarModal();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < galeriaItems.length - 1) ? currentIndex + 1 : 0;
+            atualizarModal();
+        });
+
+        // Teclado
+        document.addEventListener('keydown', (e) => {
+            if(modal.style.display === 'flex') {
+                if(e.key === 'ArrowLeft') prevBtn.click();
+                if(e.key === 'ArrowRight') nextBtn.click();
+                if(e.key === 'Escape') fecharModal.click();
+            }
+        });
+
+        // Animação dos Contadores
         const contadores = document.querySelectorAll('.stat-numero');
-        const velocidade = 200;
 
-        function iniciarContador(contador) {
-            const alvo = +contador.getAttribute('data-target');
+        const iniciarContador = (contador) => {
+            const alvo = +contador.dataset.target;
+            const velocidade = 200;
             const incremento = alvo / velocidade;
             
             function atualizarContador() {
@@ -246,6 +362,12 @@
         `;
         document.head.appendChild(style);
     </script>
+
+    <!-- Scripts -->
+    <script src="dark-mode.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
      <!-- WIDGET DO CHATBOT - Adicionar antes do </body> em todas as páginas -->
 

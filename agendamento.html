@@ -6,8 +6,13 @@
     <title>Agendamento Online - [SEU NEGÓCIO]</title>
     
     <!-- CSS do Projeto -->
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="Galeria.css">
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="Blog.css">
+    <link rel="stylesheet" href="cookie-consent.css">
     <link rel="stylesheet" href="agendamento.css">
 </head>
 <body>
@@ -20,6 +25,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="produto.html">Produtos</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="agendamento.html">Agendamento</a></li>
             </ul>
@@ -30,7 +36,6 @@
                 <span class="toggle-icon moon-icon">🌙</span>
                 <span class="toggle-text">Dark Mode</span>
             </button>
-
             <button class="btnLogin-popup">Login</button>
         </div>
     </div>
@@ -216,6 +221,7 @@
                             Desejo receber lembretes por WhatsApp/E-mail
                         </label>
                     </div>
+
                 </form>
 
                 <div class="etapa-navegacao">
@@ -354,12 +360,89 @@
         </section>
     </main>
 
+    <!-- Modal de Login/Registro -->
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <!-- Formulário de Login -->
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulário de Registro -->
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <footer>
         <img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]" width="50px">
         <p class="copyright">&copy; Copyright AMIZADE PERFUME - 2025</p>
+
+        
     </footer>
 
     <!-- Script do Agendamento -->
     <script src="agendamento.js"></script>
+    <script src="script.js"></script>
+    <script src="dark-mode.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
