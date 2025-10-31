@@ -36,9 +36,9 @@ header {
 }
 
 .login-btn {
-  border: 1px solid #fff;
+  border: 1px solid #faf9f8;
   background: transparent;
-  color: #fff;
+  color: #fdfcfa;
   padding: 8px 20px;
   border-radius: 6px;
   cursor: pointer;
@@ -138,7 +138,7 @@ header {
   padding: 10px;
   background: #111;
   border: none;
-  color: #fff;
+  color: #eec407;
   cursor: pointer;
   border-radius: 6px;
   transition: 0.3s;
@@ -152,7 +152,7 @@ header {
   display: block;
   font-size: 13px;
   margin-bottom: 15px;
-  color: #ddd;
+  color: #fdfdfc;
 }
 
 p a {
