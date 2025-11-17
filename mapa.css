@@ -1,6 +1,7 @@
 /* === ESTILOS DO MAPA INTERATIVO === */
 
 /* Controles do Mapa */
+
 .mapa-controles {
     display: flex;
     justify-content: center;
@@ -508,3 +509,5 @@
 [data-theme="dark"] .leaflet-popup-content h4 {
     color: var(--text-primary);
 }
+
+

@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Localização - [SEU NEGÓCIO]</title>
-    
     <!-- CSS do Projeto -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mapa.css">
-    
+    <link rel="stylesheet" href="dark-mode.css">
     <!-- Leaflet CSS - Biblioteca de Mapas -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-    <header>
-        <div class="caixa">
-            <h1><img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]" width="10px"></h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="galeria.html">Galeria</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="mapa.html">Localização</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="calculador.html">Calculador</a></li>
-                </ul>
-            </nav>
+   <header>
+    <div class="header-container">
+        <h1 class="titulo-principal">AMIZADE PERFUME</h1>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
+                <li><a href="calculador.html">Calculador</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="dark-mode-toggle" id="darkModeToggle">
+                <span class="toggle-icon moon-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+            <button class="btnLogin-popup">Login</button>
         </div>
-    </header>
+    </div>
+</header>
 
     <main>
         <h2 class="titulo-principal-produtos">Como Chegar</h2>
@@ -91,10 +98,10 @@
             <h3>Nossas Unidades</h3>
             <div class="localizacoes-grid">
                 <!-- Unidade 1 - PERSONALIZE -->
-                <div class="local-card" data-lat="-25.4284" data-lng="-49.2733" data-id="unidade1">
+                <div class="local-card" data-lat="-24.9594" data-lng="-53.4930" data-id="unidade1">
                     <div class="local-icon">📍</div>
                     <h4>Unidade Centro</h4>
-                    <p class="local-endereco">Rua Selvini Casagrande, 123<br>Alto Alegre - Cascavel/PR</p>
+                    <p class="local-endereco">Rua Selvino Casagrande, 123<br>Alto Alegre - Cascavel/PR</p>
                     <p class="local-horario">Seg-Sex: 8h-17h | Sáb: 8h-14h</p>
                     <div class="local-acoes">
                         <button class="btn-ir-mapa" data-target="unidade1">Ver no Mapa</button>
@@ -108,25 +115,8 @@
                     <span class="distancia" data-distancia="unidade1">Calculando...</span>
                 </div>
 
-                <!-- Unidade 2 - PERSONALIZE -->
-                <div class="local-card" data-lat="-25.4195" data-lng="-49.2646" data-id="unidade2">
-                    <div class="local-icon">📍</div>
-                    <h4>Unidade Batel</h4>
-                    <p class="local-endereco">Rua Selvini Casagrande, 123<br>Alto Alegre - Cascavel/PR</p>
-                    <p class="local-horario">Seg-Sex: 8h-17h | Sáb: 9h-15h</p>
-                    <div class="local-acoes">
-                        <button class="btn-ir-mapa" data-target="unidade2">Ver no Mapa</button>
-                        <a href="tel:+554597400-2054" class="btn-ligar">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                            </svg>
-                            Ligar
-                        </a>
-                    </div>
-                    <span class="distancia" data-distancia="unidade2">Calculando...</span>
-                </div>
-
-                <!-- Adicione mais unidades conforme necessário -->
+                      
+                    <!-- Adicione mais unidades conforme necessário -->
             </div>
         </section>
 
@@ -156,11 +146,81 @@
                 </div>
             </div>
         </section>
+            <!-- Modal de Login/Registro -->
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <!-- Formulário de Login -->
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulário de Registro -->
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
     </main>
 
     <footer>
-        <img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]">
-        <p class="copyright">&copy; Copyright [SEU NEGÓCIO] - 2024</p>
+        <img src="assets/LOGO A.png" alt="Logo [SEU NEGÓCIO]" width="50px">
+        <p class="copyright">&copy; 2025 Amizade Perfume. Todos os direitos reservados.</p>
     </footer>
 
     <!-- Leaflet JS - Biblioteca de Mapas -->
@@ -168,5 +228,76 @@
     
     <!-- Script do Mapa -->
     <script src="mapa.js"></script>
+
+    <script src="dark-mode.js"></script>
+
+    <!-- Ionicons for icons in modal -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const wrapper = document.querySelector('.wrapper');
+        const loginPopup = document.querySelector('.btnLogin-popup');
+        const iconClose = document.querySelector('.icon-close');
+        const registerLink = document.querySelector('.register-link');
+        const loginLink = document.querySelector('.login-link');
+        const loginForm = document.querySelector('.form-box.login form');
+        const registerForm = document.querySelector('.form-box.register form');
+
+        loginPopup.addEventListener('click', () => {
+            wrapper.classList.add('active-popup');
+            wrapper.classList.remove('active'); // Mostrar login por padrão
+        });
+
+        iconClose.addEventListener('click', () => {
+            wrapper.classList.remove('active-popup');
+        });
+
+        registerLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            wrapper.classList.add('active');
+        });
+
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            wrapper.classList.remove('active');
+        });
+
+        // Lógica para o botão de Login (exemplo: redirecionar se preenchido)
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const inputs = loginForm.querySelectorAll('input[required]');
+            let allFilled = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) allFilled = false;
+            });
+            if (allFilled) {
+                // Redirecionar ou lógica de login
+                alert('Login realizado com sucesso!');
+                wrapper.classList.remove('active-popup');
+                // window.location.href = 'dashboard.html'; // Exemplo
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+
+        // Lógica para o botão de Register (similar ao anterior)
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const inputs = registerForm.querySelectorAll('input[required]');
+            let allFilled = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) allFilled = false;
+            });
+            if (allFilled) {
+                // Redirecionar ou lógica de registro
+                alert('Registro realizado com sucesso!');
+                wrapper.classList.remove('active-popup');
+                // window.location.href = 'welcome.html'; // Exemplo
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
 </body>
 </html>

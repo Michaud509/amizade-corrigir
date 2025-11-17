@@ -1,39 +1,31 @@
 /* === MAPA INTERATIVO COM LEAFLET.JS === */
 
-/**
- * CONFIGURAÇÃO INICIAL
- * Aqui definimos as coordenadas das unidades do negócio
- * IMPORTANTE: Substitua pelas coordenadas reais do seu negócio
- */
-
-// Dados das unidades - PERSONALIZE AQUI
+// Dados das unidades - ATUALIZE COM SUAS COORDENADAS REAIS
 const unidades = [
     {
         id: 'unidade1',
-        nome: 'Unidade Centro',
-        lat: -25.4284,  // Latitude - ALTERE para sua localização real
-        lng: -49.2733,  // Longitude - ALTERE para sua localização real
-        endereco: 'Rua Exemplo, 123<br>Centro - Curitiba/PR',
-        telefone: '+5541999998888',
-        horario: 'Seg-Sex: 8h-18h | Sáb: 8h-14h',
-        descricao: 'Nossa unidade principal no centro da cidade.'
+        nome: 'Unidade Alto Alegre',
+        lat: -25.0627,  // Cascavel, PR
+        lng: -53.4555,
+        endereco: 'Rua Selvini Casagrande, 123<br>Alto Alegre - Cascavel/PR',
+        telefone: '+554597400-2054',
+        horario: 'Seg-Sex: 8h-17h | Sáb: 8h-14h',
+        descricao: 'Nossa unidade principal em Alto Alegre.'
     },
     {
         id: 'unidade2',
-        nome: 'Unidade Batel',
-        lat: -25.4195,
-        lng: -49.2646,
-        endereco: 'Av. do Batel, 456<br>Batel - Curitiba/PR',
-        telefone: '+5541888887777',
-        horario: 'Seg-Sex: 9h-19h | Sáb: 9h-15h',
-        descricao: 'Unidade moderna com estacionamento amplo.'
+        nome: 'Unidade Centro',
+        lat: -25.0700,
+        lng: -53.4600,
+        endereco: 'Av. Brasil, 456<br>Centro - Cascavel/PR',
+        telefone: '+554597400-2054',
+        horario: 'Seg-Sex: 9h-18h | Sáb: 9h-15h',
+        descricao: 'Unidade moderna no centro da cidade.'
     }
-    // Adicione mais unidades conforme necessário
 ];
 
 /**
  * CLASSE PRINCIPAL DO MAPA
- * Gerencia todas as funcionalidades do mapa interativo
  */
 class MapaInterativo {
     constructor() {
@@ -50,9 +42,9 @@ class MapaInterativo {
         this.mapa = null;
         this.marcadores = [];
         this.minhaLocalizacao = null;
-        this.rotaAtual = null;
+        this.marcadorUsuario = null;
         
-        // Camadas de mapa disponíveis
+        // Camadas de mapa
         this.camadasMapa = {
             streets: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors'
@@ -69,40 +61,38 @@ class MapaInterativo {
     }
 
     /**
-     * INICIALIZAÇÃO DO MAPA
-     * Configura o mapa e adiciona os marcadores
+     * INICIALIZAÇÃO
      */
     init() {
-        // Verificar se o Leaflet está carregado
         if (typeof L === 'undefined') {
-            console.error('Leaflet não foi carregado. Verifique a conexão com a internet.');
+            console.error('Leaflet não carregado. Verifique a conexão.');
+            this.mapaElement.innerHTML = '<p style="text-align:center; padding:50px; color:#dc3545;">Erro ao carregar o mapa. Verifique sua conexão com a internet.</p>';
             return;
         }
 
-        // Criar o mapa centralizado na primeira unidade
-        const primeiraUnidade = unidades[0];
-        this.mapa = L.map('mapa').setView([primeiraUnidade.lat, primeiraUnidade.lng], 13);
+        try {
+            // Criar mapa
+            const primeiraUnidade = unidades[0];
+            this.mapa = L.map('mapa').setView([primeiraUnidade.lat, primeiraUnidade.lng], 13);
 
-        // Adicionar camada padrão (ruas)
-        this.camadasMapa.streets.addTo(this.mapa);
+            // Adicionar camada padrão
+            this.camadasMapa.streets.addTo(this.mapa);
 
-        // Adicionar marcadores das unidades
-        this.adicionarMarcadores();
+            // Adicionar marcadores
+            this.adicionarMarcadores();
 
-        // Configurar eventos
-        this.configurarEventos();
+            // Configurar eventos
+            this.configurarEventos();
 
-        // Calcular distâncias se houver geolocalização
-        if (navigator.geolocation) {
-            this.calcularDistancias();
+            console.log('Mapa inicializado com sucesso!');
+        } catch (error) {
+            console.error('Erro ao inicializar mapa:', error);
+            this.mapaElement.innerHTML = '<p style="text-align:center; padding:50px; color:#dc3545;">Erro ao carregar o mapa.</p>';
         }
-
-        console.log('Mapa inicializado com sucesso!');
     }
 
     /**
-     * ADICIONAR MARCADORES NO MAPA
-     * Cria um marcador para cada unidade do negócio
+     * ADICIONAR MARCADORES
      */
     adicionarMarcadores() {
         unidades.forEach(unidade => {
@@ -120,68 +110,77 @@ class MapaInterativo {
                 title: unidade.nome
             }).addTo(this.mapa);
 
-            // Criar conteúdo do popup
+            // Popup
             const popupContent = `
-                <div style="text-align: center;">
-                    <h4 style="margin: 0 0 10px 0;">${unidade.nome}</h4>
-                    <p style="margin: 5px 0;">${unidade.endereco}</p>
-                    <p style="margin: 5px 0; font-size: 0.9em; color: #666;">${unidade.horario}</p>
+                <div style="text-align: center; min-width: 200px;">
+                    <h4 style="margin: 0 0 12px 0; color: #333;">${unidade.nome}</h4>
+                    <p style="margin: 8px 0; color: #666;">${unidade.endereco}</p>
+                    <p style="margin: 8px 0; font-size: 0.9em; color: #999;">${unidade.horario}</p>
                     <a href="tel:${unidade.telefone}" style="
                         display: inline-block;
-                        margin-top: 10px;
-                        padding: 8px 15px;
+                        margin-top: 12px;
+                        padding: 10px 20px;
                         background: #28a745;
                         color: white;
                         text-decoration: none;
-                        border-radius: 15px;
-                        font-size: 0.9em;
+                        border-radius: 20px;
+                        font-size: 0.95em;
+                        font-weight: bold;
                     ">📞 Ligar</a>
                 </div>
             `;
 
             marcador.bindPopup(popupContent);
 
-            // Adicionar evento de clique
+            // Evento de clique
             marcador.on('click', () => {
                 this.mostrarInfoUnidade(unidade);
             });
 
-            // Salvar referência
             this.marcadores.push({ unidade: unidade.id, marcador });
         });
     }
 
     /**
      * CONFIGURAR EVENTOS
-     * Vincula os botões às suas funções
      */
     configurarEventos() {
         // Botão Minha Localização
-        this.btnMinhaLocalizacao.addEventListener('click', () => {
-            this.obterMinhaLocalizacao();
-        });
+        if (this.btnMinhaLocalizacao) {
+            this.btnMinhaLocalizacao.addEventListener('click', () => {
+                this.obterMinhaLocalizacao();
+            });
+        }
 
         // Botão Calcular Rota
-        this.btnCalcularRota.addEventListener('click', () => {
-            this.calcularRota();
-        });
+        if (this.btnCalcularRota) {
+            this.btnCalcularRota.addEventListener('click', () => {
+                this.calcularRota();
+            });
+        }
 
         // Botão Compartilhar
-        this.btnCompartilhar.addEventListener('click', () => {
-            this.compartilharLocalizacao();
-        });
+        if (this.btnCompartilhar) {
+            this.btnCompartilhar.addEventListener('click', () => {
+                this.compartilharLocalizacao();
+            });
+        }
 
         // Seletor de tipo de mapa
-        this.tipoMapa.addEventListener('change', (e) => {
-            this.trocarTipoMapa(e.target.value);
-        });
+        if (this.tipoMapa) {
+            this.tipoMapa.addEventListener('change', (e) => {
+                this.trocarTipoMapa(e.target.value);
+            });
+        }
 
-        // Fechar painel de informações
-        this.fecharPanel.addEventListener('click', () => {
-            this.infoPanel.classList.remove('show');
-        });
+        // Fechar painel
+        if (this.fecharPanel) {
+            this.fecharPanel.addEventListener('click', () => {
+                this.infoPanel.classList.remove('show');
+            });
+        }
 
-        // Botões "Ver no Mapa" dos cards
+        // Botões "Ver no Mapa"
         document.querySelectorAll('.btn-ir-mapa').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const unidadeId = e.target.getAttribute('data-target');
@@ -195,35 +194,29 @@ class MapaInterativo {
 
     /**
      * OBTER LOCALIZAÇÃO DO USUÁRIO
-     * Usa a API de Geolocalização do navegador
      */
     obterMinhaLocalizacao() {
-        // Verificar se o navegador suporta geolocalização
         if (!navigator.geolocation) {
             alert('Seu navegador não suporta geolocalização.');
             return;
         }
 
-        // Desabilitar botão durante carregamento
         this.btnMinhaLocalizacao.disabled = true;
         this.btnMinhaLocalizacao.textContent = 'Localizando...';
 
-        // Obter posição
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                // Sucesso - pegar coordenadas
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
 
-                // Salvar localização
                 this.minhaLocalizacao = { lat, lng };
 
-                // Remover marcador anterior se existir
+                // Remover marcador anterior
                 if (this.marcadorUsuario) {
                     this.mapa.removeLayer(this.marcadorUsuario);
                 }
 
-                // Criar ícone do usuário
+                // Criar marcador do usuário
                 const iconeUsuario = L.divIcon({
                     className: 'user-marker',
                     html: '<div style="background: #28a745; width: 20px; height: 20px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>',
@@ -231,15 +224,17 @@ class MapaInterativo {
                     iconAnchor: [10, 10]
                 });
 
-                // Adicionar marcador do usuário
                 this.marcadorUsuario = L.marker([lat, lng], {
                     icon: iconeUsuario
                 }).addTo(this.mapa);
 
                 this.marcadorUsuario.bindPopup('Você está aqui!');
 
-                // Centralizar mapa na localização
+                // Centralizar
                 this.mapa.setView([lat, lng], 14);
+
+                // Atualizar distâncias
+                this.atualizarDistancias();
 
                 // Reabilitar botão
                 this.btnMinhaLocalizacao.disabled = false;
@@ -250,22 +245,18 @@ class MapaInterativo {
                     Minha Localização
                 `;
 
-                // Atualizar distâncias
-                this.calcularDistancias();
-
                 console.log('Localização obtida:', lat, lng);
             },
             (error) => {
-                // Erro ao obter localização
                 console.error('Erro ao obter localização:', error);
                 
                 let mensagem = 'Não foi possível obter sua localização. ';
                 switch(error.code) {
                     case error.PERMISSION_DENIED:
-                        mensagem += 'Você negou a permissão de localização.';
+                        mensagem += 'Você negou a permissão.';
                         break;
                     case error.POSITION_UNAVAILABLE:
-                        mensagem += 'Informação de localização indisponível.';
+                        mensagem += 'Localização indisponível.';
                         break;
                     case error.TIMEOUT:
                         mensagem += 'Tempo limite excedido.';
@@ -274,7 +265,6 @@ class MapaInterativo {
                 
                 alert(mensagem);
 
-                // Reabilitar botão
                 this.btnMinhaLocalizacao.disabled = false;
                 this.btnMinhaLocalizacao.innerHTML = `
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -287,37 +277,11 @@ class MapaInterativo {
     }
 
     /**
-     * CALCULAR DISTÂNCIAS
-     * Calcula a distância do usuário até cada unidade
-     */
-    calcularDistancias() {
-        if (!this.minhaLocalizacao) {
-            // Tentar obter localização primeiro
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    this.minhaLocalizacao = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-                    this.atualizarDistancias();
-                },
-                () => {
-                    // Se falhar, não mostrar distâncias
-                    document.querySelectorAll('.distancia').forEach(el => {
-                        el.textContent = 'Ative localização para ver distância';
-                    });
-                }
-            );
-        } else {
-            this.atualizarDistancias();
-        }
-    }
-
-    /**
-     * ATUALIZAR DISTÂNCIAS NA INTERFACE
-     * Mostra a distância até cada unidade
+     * ATUALIZAR DISTÂNCIAS
      */
     atualizarDistancias() {
+        if (!this.minhaLocalizacao) return;
+
         unidades.forEach(unidade => {
             const distancia = this.calcularDistanciaEntre(
                 this.minhaLocalizacao.lat,
@@ -338,11 +302,10 @@ class MapaInterativo {
     }
 
     /**
-     * CALCULAR DISTÂNCIA ENTRE DOIS PONTOS
-     * Fórmula de Haversine para calcular distância em km
+     * CALCULAR DISTÂNCIA (Haversine)
      */
     calcularDistanciaEntre(lat1, lng1, lat2, lng2) {
-        const R = 6371; // Raio da Terra em km
+        const R = 6371;
         const dLat = this.degreesToRadians(lat2 - lat1);
         const dLng = this.degreesToRadians(lng2 - lng1);
         
@@ -353,9 +316,7 @@ class MapaInterativo {
             Math.sin(dLng / 2) * Math.sin(dLng / 2);
         
         const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        const distancia = R * c;
-        
-        return distancia;
+        return R * c;
     }
 
     degreesToRadians(degrees) {
@@ -364,7 +325,6 @@ class MapaInterativo {
 
     /**
      * CALCULAR ROTA
-     * Abre o Google Maps com direções
      */
     calcularRota() {
         if (!this.minhaLocalizacao) {
@@ -391,7 +351,6 @@ class MapaInterativo {
         });
 
         if (unidadeMaisProxima) {
-            // Abrir Google Maps com direções
             const origem = `${this.minhaLocalizacao.lat},${this.minhaLocalizacao.lng}`;
             const destino = `${unidadeMaisProxima.lat},${unidadeMaisProxima.lng}`;
             const url = `https://www.google.com/maps/dir/?api=1&origin=${origem}&destination=${destino}&travelmode=driving`;
@@ -402,33 +361,25 @@ class MapaInterativo {
 
     /**
      * COMPARTILHAR LOCALIZAÇÃO
-     * Usa a Web Share API ou copia para área de transferência
      */
     compartilharLocalizacao() {
         const primeiraUnidade = unidades[0];
         const texto = `Confira a localização de ${primeiraUnidade.nome}: https://www.google.com/maps?q=${primeiraUnidade.lat},${primeiraUnidade.lng}`;
-        const titulo = 'Localização - ' + primeiraUnidade.nome;
 
-        // Tentar usar Web Share API
         if (navigator.share) {
             navigator.share({
-                title: titulo,
-                text: texto,
-                url: window.location.href
-            }).then(() => {
-                console.log('Compartilhado com sucesso!');
+                title: 'Localização - ' + primeiraUnidade.nome,
+                text: texto
             }).catch((error) => {
                 console.log('Erro ao compartilhar:', error);
                 this.copiarParaClipboard(texto);
             });
         } else {
-            // Fallback: copiar para clipboard
             this.copiarParaClipboard(texto);
         }
     }
 
     copiarParaClipboard(texto) {
-        // Criar elemento temporário
         const temp = document.createElement('textarea');
         temp.value = texto;
         document.body.appendChild(temp);
@@ -436,20 +387,17 @@ class MapaInterativo {
         document.execCommand('copy');
         document.body.removeChild(temp);
         
-        alert('Link copiado para área de transferência!');
+        alert('Link copiado!');
     }
 
     /**
      * TROCAR TIPO DE MAPA
-     * Alterna entre ruas, satélite e terreno
      */
     trocarTipoMapa(tipo) {
-        // Remover todas as camadas
         Object.values(this.camadasMapa).forEach(camada => {
             this.mapa.removeLayer(camada);
         });
 
-        // Adicionar camada selecionada
         if (this.camadasMapa[tipo]) {
             this.camadasMapa[tipo].addTo(this.mapa);
         }
@@ -457,27 +405,21 @@ class MapaInterativo {
 
     /**
      * CENTRALIZAR UNIDADE
-     * Centraliza o mapa em uma unidade específica
      */
     centralizarUnidade(unidade) {
         this.mapa.setView([unidade.lat, unidade.lng], 16);
         
-        // Abrir popup do marcador
         const marcadorInfo = this.marcadores.find(m => m.unidade === unidade.id);
         if (marcadorInfo) {
             marcadorInfo.marcador.openPopup();
         }
 
-        // Mostrar informações no painel
         this.mostrarInfoUnidade(unidade);
-
-        // Scroll suave até o mapa
         this.mapaElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     /**
-     * MOSTRAR INFORMAÇÕES DA UNIDADE
-     * Exibe detalhes no painel lateral
+     * MOSTRAR INFO DA UNIDADE
      */
     mostrarInfoUnidade(unidade) {
         const infoContent = document.getElementById('infoContent');
@@ -508,7 +450,7 @@ class MapaInterativo {
     }
 }
 
-// Inicializar o mapa quando a página carregar
+// Inicializar quando página carregar
 document.addEventListener('DOMContentLoaded', () => {
     window.mapaInterativo = new MapaInterativo();
     console.log('Sistema de mapa carregado!');
